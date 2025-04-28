@@ -6,8 +6,8 @@
     "build": "esbuild src/index.jsx --bundle --outfile=public/bundle.js"
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "esbuild": "^0.25.3"
