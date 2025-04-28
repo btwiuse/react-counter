@@ -20,5 +20,17 @@ function Counter() {
   );
 }
 
+function App() {
+  return (
+    <div>
+      <Counter />
+      <footer>
+        Commit Hash: {process.env.COMMIT_HASH} <br />
+        Build Date: {process.env.BUILD_DATE}
+      </footer>
+    </div>
+  );
+}
+
 const root = createRoot(document.getElementById('root'));
-root.render(<Counter />);
+root.render(<App />);
