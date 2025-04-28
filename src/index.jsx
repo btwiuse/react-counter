@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 function Counter() {
   const [count, setCount] = useState(() => {
@@ -20,4 +20,5 @@ function Counter() {
   );
 }
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<Counter />);
