@@ -19313,8 +19313,11 @@
     }, [count]);
     return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h1", null, "Count: ", count), /* @__PURE__ */ import_react.default.createElement("button", { onClick: () => setCount(count + 1) }, "Increment"), /* @__PURE__ */ import_react.default.createElement("button", { onClick: () => setCount(count - 1) }, "Decrement"));
   }
+  function App() {
+    return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement(Counter, null), /* @__PURE__ */ import_react.default.createElement("footer", null, "Commit Hash: ", process.env.COMMIT_HASH, " ", /* @__PURE__ */ import_react.default.createElement("br", null), "Build Date: ", process.env.BUILD_DATE));
+  }
   var root = (0, import_client.createRoot)(document.getElementById("root"));
-  root.render(/* @__PURE__ */ import_react.default.createElement(Counter, null));
+  root.render(/* @__PURE__ */ import_react.default.createElement(App, null));
 })();
 /*! Bundled license information:
 
