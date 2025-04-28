@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "esbuild src/index.jsx --bundle --outfile=public/bundle.js --servedir=public --serve=8000",
-    "build": "esbuild src/index.jsx --bundle --outfile=public/bundle.js"
+    "build": "node esbuild.config.js"
   },
   "dependencies": {
     "react": "^19.1.0",
