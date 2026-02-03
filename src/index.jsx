@@ -1,9 +1,9 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { useLocalStorage } from 'react-use';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { useLocalStorage } from "react-use";
 
 function Counter() {
-  const [count, setCount] = useLocalStorage('count', 0);
+  const [count, setCount] = useLocalStorage("count", 0);
 
   return (
     <div>
@@ -15,8 +15,8 @@ function Counter() {
 function Footer() {
   return (
     <footer>
-      Commit Hash: {process.env.COMMIT_HASH} <br />
-      Build Date: {process.env.BUILD_DATE}
+      Commit Hash: {window.process ? process.env.COMMIT_HASH : "unknown"} <br />
+      Build Date: {window.process ? process.env.BUILD_DATE : "unknown"}
     </footer>
   );
 }
@@ -30,5 +30,5 @@ function App() {
   );
 }
 
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById("root"));
 root.render(<App />);

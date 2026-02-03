@@ -2,7 +2,7 @@
   "name": "react-counter",
   "version": "1.0.0",
   "scripts": {
-    "start": "esbuild src/index.jsx --bundle --outfile=public/bundle.js --servedir=public --serve=8000",
+    "start": "esbuild src/index.jsx --bundle --outfile=public/bundle.js --servedir=public --serve=8000 --watch",
     "build": "node esbuild.config.js"
   },
   "dependencies": {
