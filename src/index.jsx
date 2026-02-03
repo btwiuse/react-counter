@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { useLocalStorage } from 'react-use';
 
 function Counter() {
-  const [count, setCount] = useState(() => {
-    const savedCount = localStorage.getItem('count');
-    return savedCount !== null ? parseInt(savedCount, 10) : 0;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('count', count);
-  }, [count]);
+  const [count, setCount] = useLocalStorage('count', 0);
 
   return (
     <div>
