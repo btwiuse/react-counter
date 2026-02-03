@@ -7,22 +7,26 @@ function Counter() {
 
   return (
     <div>
-      <h1>Count: {count}</h1>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button onClick={() => setCount(count + 1)}>{count}</button>
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      Commit Hash: {process.env.COMMIT_HASH} <br />
+      Build Date: {process.env.BUILD_DATE}
+    </footer>
   );
 }
 
 function App() {
   return (
-    <div>
+    <>
       <Counter />
-      <footer>
-        Commit Hash: {process.env.COMMIT_HASH} <br />
-        Build Date: {process.env.BUILD_DATE}
-      </footer>
-    </div>
+      <Footer />
+    </>
   );
 }
 
