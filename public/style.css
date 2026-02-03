@@ -75,6 +75,11 @@ button:active {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+button:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
+}
+
 footer {
   margin-top: 40px;
   padding-top: 20px;
