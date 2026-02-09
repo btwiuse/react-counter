@@ -70,17 +70,19 @@ export default function UserInputModal() {
         )}
 
         <div className="code-example">
-          <pre>{`const getUserInput = () => {
+          <pre>{`const resolvePromiseRef = useRef(null);
+
+const getUserInput = () => {
   return new Promise((resolve) => {
-    // Show modal and wait for user action
+    // Store resolver in ref and show modal
+    resolvePromiseRef.current = resolve;
     setIsOpen(true);
-    setResolvePromise(() => resolve);
   });
 };
 
 // Usage:
 const userText = await getUserInput();
-console.log(userText); // User's input`}</pre>
+console.log(userText); // User's input or null`}</pre>
         </div>
       </div>
 
