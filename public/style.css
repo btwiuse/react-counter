@@ -40,7 +40,7 @@ body {
   flex-direction: column;
   gap: 0.35rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hamburger-button:hover {
@@ -54,7 +54,6 @@ body {
   height: 3px;
   background: white;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
 /* Sidebar */
