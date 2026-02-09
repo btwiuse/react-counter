@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Dialog } from "@headlessui/react";
 
 export default function UserInputModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
-  const [resolvePromise, setResolvePromise] = useState(null);
+  const resolvePromiseRef = useRef(null);
 
   // This is the getUserInput function that returns a Promise
   const getUserInput = () => {
     return new Promise((resolve) => {
-      setResolvePromise(() => resolve);
+      resolvePromiseRef.current = resolve;
       setInputValue("");
       setIsOpen(true);
     });
@@ -18,17 +18,17 @@ export default function UserInputModal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (resolvePromise) {
-      resolvePromise(inputValue);
-      setResolvePromise(null);
+    if (resolvePromiseRef.current) {
+      resolvePromiseRef.current(inputValue);
+      resolvePromiseRef.current = null;
     }
     setIsOpen(false);
   };
 
   const handleCancel = () => {
-    if (resolvePromise) {
-      resolvePromise(null);
-      setResolvePromise(null);
+    if (resolvePromiseRef.current) {
+      resolvePromiseRef.current(null);
+      resolvePromiseRef.current = null;
     }
     setIsOpen(false);
   };
@@ -37,10 +37,12 @@ export default function UserInputModal() {
     setResult("Waiting for user input...");
     const userText = await getUserInput();
     
-    if (userText) {
-      setResult(`You entered: "${userText}"`);
-    } else {
+    if (userText === null) {
       setResult("User cancelled the input");
+    } else if (userText === "") {
+      setResult("You entered an empty string");
+    } else {
+      setResult(`You entered: "${userText}"`);
     }
   };
 
@@ -104,9 +106,8 @@ console.log(userText); // User's input`}</pre>
                   id="userInput"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  placeholder="Enter some text..."
+                  placeholder="Enter some text (or leave empty)..."
                   autoFocus
-                  required
                 />
               </div>
 
