@@ -40,7 +40,6 @@ function App() {
         activeScenario={activeScenario}
         onScenarioChange={setActiveScenario}
         isOpen={sidebarOpen}
-        onToggle={toggleSidebar}
       />
       <main className="main-content">
         <ActiveComponent />
