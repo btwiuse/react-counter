@@ -171,6 +171,52 @@ body {
   transform: translateY(0);
 }
 
+/* Demo Content */
+.demo-content {
+  margin-bottom: 2rem;
+}
+
+.demo-description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.demo-description code {
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #667eea;
+}
+
+.result-box {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  color: #166534;
+  font-size: 0.9375rem;
+}
+
+.code-example {
+  margin-top: 2rem;
+  background: #1f2937;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.code-example pre {
+  color: #e5e7eb;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Modal Styles */
 .modal-overlay {
   position: fixed;

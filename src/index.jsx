@@ -5,6 +5,7 @@ import BasicModal from "./components/BasicModal";
 import DescriptionModal from "./components/DescriptionModal";
 import FormModal from "./components/FormModal";
 import StyledModal from "./components/StyledModal";
+import UserInputModal from "./components/UserInputModal";
 
 function App() {
   const scenarios = [
@@ -12,6 +13,7 @@ function App() {
     { id: "description", title: "Modal with Description", component: DescriptionModal },
     { id: "form", title: "Modal with Form", component: FormModal },
     { id: "styled", title: "Animated Modal", component: StyledModal },
+    { id: "userinput", title: "getUserInput() Pattern", component: UserInputModal },
   ];
 
   const [activeScenario, setActiveScenario] = useState(scenarios[0].id);
