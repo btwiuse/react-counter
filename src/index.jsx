@@ -15,16 +15,32 @@ function App() {
   ];
 
   const [activeScenario, setActiveScenario] = useState(scenarios[0].id);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const ActiveComponent =
     scenarios.find((s) => s.id === activeScenario)?.component || BasicModal;
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
     <div className="app-layout">
+      <button 
+        className="hamburger-button" 
+        onClick={toggleSidebar}
+        aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <Sidebar
         scenarios={scenarios}
         activeScenario={activeScenario}
         onScenarioChange={setActiveScenario}
+        isOpen={sidebarOpen}
+        onToggle={toggleSidebar}
       />
       <main className="main-content">
         <ActiveComponent />

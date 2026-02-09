@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Sidebar({ scenarios, activeScenario, onScenarioChange }) {
+export default function Sidebar({ scenarios, activeScenario, onScenarioChange, isOpen }) {
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? "open" : "closed"}`}>
       <div className="sidebar-header">
         <h1>Modal Examples</h1>
         <p className="subtitle">Using @headlessui/react</p>
